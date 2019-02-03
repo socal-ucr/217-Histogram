@@ -42,13 +42,13 @@ void verify(unsigned int* input, unsigned int* bins, unsigned int num_elements, 
 
   // Compare to reference bins
   for(unsigned int binIdx = 0; binIdx < num_bins; ++binIdx) {
-      printf("bin %u, cpu = %u, gpu = %u\n", binIdx, bins_ref[binIdx], bins[binIdx]);
+      printf("%u: %u/%u, ", binIdx, bins_ref[binIdx], bins[binIdx]);
       if(bins[binIdx] != bins_ref[binIdx]) {
         printf("TEST FAILED at bin %u, cpu = %u, gpu = %u\n\n", binIdx, bins_ref[binIdx], bins[binIdx]);
-        exit(0);
+        //exit(0);
       }
   }
-  printf("TEST PASSED\n\n");
+  printf("\nTEST PASSED\n");
 
   free(bins_ref);
 
