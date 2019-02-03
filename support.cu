@@ -26,10 +26,10 @@ void initVector(unsigned int **vec_h, unsigned int size, unsigned int num_bins)
 
 }
 
-void verify(unsigned int* input, uint8_t* bins, unsigned int num_elements, unsigned int num_bins) {
+void verify(unsigned int* input, unsigned int* bins, unsigned int num_elements, unsigned int num_bins) {
 
   // Initialize reference
-  uint8_t* bins_ref = (uint8_t*) malloc(num_bins*sizeof(uint8_t));
+  unsigned int* bins_ref = (unsigned int*) malloc(num_bins*sizeof(unsigned int));
   for(unsigned int binIdx = 0; binIdx < num_bins; ++binIdx) {
       bins_ref[binIdx] = 0;
   }
@@ -44,6 +44,7 @@ void verify(unsigned int* input, uint8_t* bins, unsigned int num_elements, unsig
 
   // Compare to reference bins
   for(unsigned int binIdx = 0; binIdx < num_bins; ++binIdx) {
+      printf("bin %u, cpu = %u, gpu = %u\n", binIdx, bins_ref[binIdx], bins[binIdx]);
       if(bins[binIdx] != bins_ref[binIdx]) {
         printf("TEST FAILED at bin %u, cpu = %u, gpu = %u\n\n", binIdx, bins_ref[binIdx], bins[binIdx]);
         exit(0);

@@ -36,7 +36,7 @@
 Setup and invoke your kernel(s) in this function. You may also allocate more
 GPU memory if you need to
 *******************************************************************************/
-void histogram(unsigned int* input, uint8_t* bins, unsigned int num_elements,
+void histogram(unsigned int* input, unsigned int* bins, unsigned int num_elements,
         unsigned int num_bins) {
 
     // INSERT CODE HERE
