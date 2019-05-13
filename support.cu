@@ -45,7 +45,7 @@ void verify(unsigned int* input, unsigned int* bins, unsigned int num_elements, 
       printf("%u: %u/%u, ", binIdx, bins_ref[binIdx], bins[binIdx]);
       if(bins[binIdx] != bins_ref[binIdx]) {
         printf("TEST FAILED at bin %u, cpu = %u, gpu = %u\n\n", binIdx, bins_ref[binIdx], bins[binIdx]);
-        //exit(0);
+        exit(0);
       }
   }
   printf("\nTEST PASSED\n");
